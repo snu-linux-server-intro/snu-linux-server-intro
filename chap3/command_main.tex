@@ -1,0 +1,17 @@
+
+\graphicspath{{./chap3/images/}} 
+\chapter{Command}
+\textbf{이 장은 기본 리눅스 명령어를 다룬다.}
+\section{파일 관리}
+\subsection{절대경로와 상대경로}
+절대경로는 \code{/home/user/dir1/dir2}와 같은 것이다. 상대경로는 현재 내 위치에서 시작하는 경로다. 즉, 내가 지금 \code{/home/user/dir1}에 있다면 여기서 \code{/home/user/dir1/dir2}의 상대경로는 그냥 \code{dir2}다.
+\subsection{디렉토리 및 탐색}
+\code{cd} 명령어를 사용해서 디렉터리를 탐색할 수 있다. \\ \code{..}은 상위 디렉토리, \code{-}은 이전 디렉토리, \code{~}는 홈 디렉토리를 의미한다. \code{cd <dir>}라 입력하면 해당 디렉토리로 이동된다. 디렉토리를 표현할 때 절대경로, 상대경로 둘 다 가능하며, 실행시 주소쪽 값이 변경된다.
+\begin{lstlisting}
+    userid:~$ cd dir1
+    userid:~/dir1$ cd /home/user/dir1 
+    userid:/home/user/dir1$ cd ..
+    userid:/home/user$ cd -
+    userid:/home/user/dir1$ cd ~
+    userid:~$
+\end{lstlisting}
