@@ -70,6 +70,7 @@ ENTRY
     title
     type
     url
+    urltext
     volume
     year
   }
@@ -285,7 +286,11 @@ FUNCTION {format.issn}
 FUNCTION {format.url}
 { url empty$
     { "" }
-    { new.block "URL \url{" url * "}" * }
+    { urltext empty$
+        { new.block "URL \url{" url * "}" * }
+        { new.block "URL \href{" url * "}{" * urltext * "}" * }
+      if$
+    }
   if$
 }
 

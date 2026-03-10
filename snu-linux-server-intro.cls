@@ -234,22 +234,22 @@
 % of originality itself appears in a quote environment, i.e. tabbed in at 
 % both sides, and on its own page.
 
-%\newenvironment{originality}
-%{\clearpage
-%\begin{center}
-%\vspace*{1.5cm}
-%{\Large\bfseries\sffamily\textcolor{GsBlue}{Statement of Originality}\par}
-%\vspace*{1.5cm}
-%{I, the undersigned, declare that this is my own work unless where otherwise acknowledged and referenced. \par}
-%\vspace*{1.5cm}
-%\renewcommand\arraystretch{1.5}
-%\begin{tabular}{ll}
-%      {\bfseries Candidate} & \@author \\[15mm]
-%      {\bfseries Signed} & \makebox[1.5in]{\hrulefill} \\
-%      {\bfseries Date} & \today \\
-%\end{tabular}
-%\end{center}
-%\if@openright\cleardoublepage\else\clearpage\fi}
+\newenvironment{originality}
+{\clearpage
+\begin{center}
+\vspace*{1.5cm}
+{\Large\bfseries\sffamily\textcolor{GsBlue}{Statement of Originality}\par}
+\vspace*{1.5cm}
+{I, the undersigned, declare that this is my own work unless where otherwise acknowledged and referenced. \par}
+\vspace*{1.5cm}
+\renewcommand\arraystretch{1.5}
+\begin{tabular}{ll}
+      {\bfseries Candidate} & \@author \\[15mm]
+      {\bfseries Signed} & \makebox[1.5in]{\hrulefill} \\
+      {\bfseries Date} & \today \\
+\end{tabular}
+\end{center}
+\if@openright\cleardoublepage\else\clearpage\fi}
 
 %% This was updated to the official Statement of Originality (Authentication form)
 

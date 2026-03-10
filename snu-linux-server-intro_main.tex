@@ -124,7 +124,7 @@
   language=bash,                % the language of the code
   basicstyle   = \color{black}\raggedright\verbfont\footnotesize\selectfont,
   backgroundcolor=\color{backcolour},
-  commentstyle=\color{codegreen}
+  commentstyle=\color{codegreen},
   keywordstyle=\color{magenta},
   numberstyle=\tiny\color{codegray},
   stringstyle=\color{codepurple},  % numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
@@ -145,8 +145,8 @@
   %keywordstyle=\color{blue},          % keyword style
   %commentstyle=\color{dkgreen},       % comment style
   %stringstyle=\color{mauve},         % string literal style
-  escapeinside={\%*}{*)},            % if you want to add a comment within your code
-  morekeywords={*,...}               % if you want to add more keywords to the set
+  escapeinside={\%*}{*},            % if you want to add a comment within your code
+  morekeywords={*,...},              % if you want to add more keywords to the set
   basicstyle=\ttfamily,
   columns=flexible
 }
@@ -167,8 +167,9 @@
 {\backmatter
     % Bibliography
     \if@openright\cleardoublepage\else\clearpage\fi
+    % Uncomment below when citations are added to snu-linux-server-intro_main.bib
     \bibliographystyle{plainnat} %% specific plainnat does not show url for articles
-    {\footnotesize\bibliography{}}
+    {\footnotesize\bibliography{snu-linux-server-intro_main}}
 	\printindex
 }
 
