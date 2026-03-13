@@ -153,3 +153,59 @@
 이렇게 하면 \code{script.sh}라는 쉘 스크립트가 실행될 때 전달된 첫 번째 인자와 두 번째 인자가 각각 출력된다. 전달한 인자의 개수는 \code{$#}로 확인할 수 있다.
 
 \subsection{산술 연산}
+앞서 언급하였듯이, bash의 모든 변수는 기본적으로 문자열이기 때문에, 산술 연산을 하기 위해서는 별도의 구문을 사용하여야 한다. Bash에서 산술 연산을 할 수 있는 방법으로는 \code{expr} 명령어, \code{let} 명령어, 그리고 \code{$(( ))} 구문이 있다. 
+
+\code{expr} 명령어는 아래와 같이 사용한다.
+\begin{lstlisting}
+    #!/bin/bash
+    a=5
+    b=3
+    plus=`expr $a + $b`
+    minus=`expr $a - $b`
+    multiply=`expr $a \* $b`
+    divide=`expr $a / $b`
+    remainder=`expr $a % $b`
+
+    echo "plus: $plus"
+    echo "minus: $minus"
+    echo "multiply: $multiply"
+    echo "divide: $divide"
+    echo "remainder: $remainder"
+\end{lstlisting}
+중요한 점은 역따음표로 감싸줘야 한다는 거, 피연산자와 연산자 사이에 공백이 필요한 거, 그리고 곱셈 문자는 \code{\}로 이스케이프 처리해야 한다는 것이다. 또한 괄호 역시 이스케이프 처리를 해야 한다.
+
+\code{let} 명령어는 아래와 같이 사용한다.
+\begin{lstlisting}
+    #!/bin/bash
+    a=5
+    b=3
+    let plus=a+b
+    let minus=a-b
+    let multiply=a*b
+    let divide=a/b
+    let remainder=a%b
+
+    echo "plus: $plus"
+    echo "minus: $minus"
+    echo "multiply: $multiply"
+    echo "divide: $divide"
+    echo "remainder: $remainder"
+\end{lstlisting}
+
+\code{$(())} 구문은 아래와 같이 사용한다.
+\begin{lstlisting}
+    #!/bin/bash
+    a=5
+    b=3
+    plus=$((a + b))
+    minus=$((a - b))
+    multiply=$((a * b))
+    divide=$((a / b))
+    remainder=$((a % b))
+
+    echo "plus: $plus"
+    echo "minus: $minus"
+    echo "multiply: $multiply"
+    echo "divide: $divide"
+    echo "remainder: $remainder"
+\end{lstlisting}
