@@ -9,11 +9,32 @@
 \section{Windows vs. Linux}
 % TODO : 운영체제에 관한 간단한 설명 / Windows가 프로그래밍에 적합하지 않은 이유 / Linux가 프로그래밍에 적합한 이유
 
-\section{Ubuntu}
-Ubuntu Linux는 윈도우와 같은 운영체제로, 윈도우와 달리 무료이며 공개 소스이다. 서버에 일반적으로 이용하는 Ubuntu Server는 \acs{GUI}가 없는 Ubuntu로, 마우스 없이 명령줄만으로 제어하는 \acs{CLI} 환경이다. 윈도우의 명령 프롬프트(cmd)와 유사하다.
+컴퓨터 사용자가 컴퓨터를 쉽게 사용하기 위해서는 하드웨어와 소프트웨어 전반을 관리하고, 여러 서비스들을 제공하는 운영체제 (Operating System, OS)가 필요하다. 대표적인 운영체제로는 Microsoft 사에서 제공하는 Windows와 Apple 사에서 제공하는 macOS, 그리고 오픈 소스로 제공되는 Linux 계열 운영체제들이 있다. 
+
+% TODO: Windows가 적합하지 않은 이유 & Linux가 적합한 이유 구체화
+일반적으로는 Windows가 가장 널리 사용되는 운영체제지만, 개발 환경에 있어서 Windows는 그리 적합하지 않다. 
+
+이러한 이유 때문에 프로그래밍을 할 때는 Windows보다 Linux 계열 운영체제를 사용하는 것이 일반적이다.
+
+대표적인 Linux 계열 운영체제로는 Ubuntu Linux가 있으며, 윈도우와 달리 무료이며 공개 소스이다. 서버에 일반적으로 이용하는 Ubuntu Server는 \acs{GUI}가 없는 Ubuntu로, 마우스 없이 명령줄만으로 제어하는 \acs{CLI} 환경이다. 윈도우의 명령 프롬프트(cmd)와 유사하다. GUI를 사용하고 싶으면 Ubuntu Desktop을 설치하면 된다. 그러나, 슈퍼컴퓨터와 같은 고성능 컴퓨팅 환경에서는 대부분 CLI 환경을 사용하기 때문에, 추후 이러한 분야에 관심이 있다면 CLI 환경에 익숙해지는 것이 좋다.
 
 \section{WSL}
 % TODO : WSL에 관한 간단한 설명 / WSL이 좋은 이유 / WSL 설치 방법
+앞서 언급했듯이, 프로그래밍을 위해서는 Linux 계열 운영체제를 사용하는 것이 더 편리하다. 그러나 대부분의 컴퓨터에는 Windows가 설치되어 있으며, Windows에서만 사용할 수 있는 응용 프로그램들도 많다. 대표적으로 카카오톡을 Linux에서 사용하는 것은 굉장히 불편하다. 또한 컴퓨터에 익숙하지 않은 사람이 운영체제를 직접 건드리는 것은 위험할 수 있다. 따라서 Windows에서 Linux로 완전히 갈아타는 것은 쉽지 않다.
+
+이를 해결할 수 있는 방법이 바로 Windows Subsystem for Linux (WSL)이다. WSL은 Windows 10과 Windows 11에서 사용할 수 있는 기능으로, Windows 내에서 Linux 환경을 실행할 수 있게 해준다. WSL을 사용하면 Windows와 Linux를 동시에 사용할 수 있으며, 파일 시스템도 공유할 수 있다. 또한 WSL은 가상 머신보다 훨씬 가볍고 빠르기 때문에, 개발자들에게 매우 인기가 있다.
+
+WSL을 설치하는 방법은 간단하다 (\href{https://learn.microsoft.com/ko-kr/windows/wsl/install}{https://learn.microsoft.com/ko-kr/windows/wsl/install}). 이전에 WSL을 설치한 적이 없다면, Windows Powershell을 관리자 권한으로 실행한 후, 다음 명령어를 입력하여 WSL을 설치할 수 있다.
+
+\begin{lstlisting}
+    C:\Windows\system32> wsl --install
+\end{lstlisting}
+
+위의 명령어를 입력하고 설치가 완료될 때까지 기다리면, WSL이 자동으로 설치된다. 설치가 완료되면, 컴퓨터를 다시 시작하면 된다. 이제 WSL이라는 응용 프로그램이 생겼을 것이고 이를 실행할 수 있을 것이다. 이를 실행하면 cmd와 비슷한 창이 나타날 것인데, 이 창이 바로 CLI 환경의 Ubuntu Linux이다.
+
+WSL이 좋은 점은 파일 시스템을 공유하기 때문에 Windows에서 Linux 파일에 접근할 수 있고, 그 반대도 가능하다는 것이다. WSL 내에서 Windows의 C 드라이브는 \code{/mnt/c}로 마운트되어 있고, WSL의 파일 역시 Windows의 파일 탐색기에서 접근할 수 있다.
+
+여기까지 성공적으로 진행되었으면 이제 Linux 환경에서 프로그래밍을 할 수 있는 준비가 된 것이다. 다음 장에서는 Linux 환경에서 프로그래밍을 하기 위한 기본적인 명령어와 도구들을 소개할 것이다.
 
 %\subsection{Showing the Use of Acronyms}
 
